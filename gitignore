@@ -1,0 +1,35 @@
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor/IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Arduino IDE build artifacts ---
+build/
+*.hex
+*.elf
+*.bin
+*.map
+
+# --- PlatformIO (if you or contributors use it instead of Arduino IDE) ---
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# --- Node (only relevant if the test harness or tooling grows to use npm) ---
+node_modules/
+package-lock.json
+
+# --- Local secrets (never commit these) ---
+.env
+*.key
+secrets.json
+
+# --- Misc scratch files ---
+*.tmp
+*.bak
