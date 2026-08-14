@@ -19,3 +19,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+Additional note (not a legal term, just a heads-up): this repository contains circuit
+designs and wiring instructions for electronics projects, including some that reference
+mains-voltage (100-240V) devices. Designs are provided for educational purposes. Verify
+all wiring yourself before powering anything on. Any project involving mains voltage
+should use certified relay/smart-plug hardware rather than direct hand-wiring — see the
+agent prompt's safety rules for details.
