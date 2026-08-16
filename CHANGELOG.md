@@ -5,6 +5,26 @@ All notable changes to the CircuitForge prompt are logged here, mirroring the
 static review pass, a live API test, or real build feedback — not a guess about what might
 help.
 
+## v1.7 — 2026-08-15
+Patch from a real build self-audit (a wireless ESP8266 doorbell project, ESP-NOW). The audit
+found the session's custom instructions had been truncated after Phase 3, silently dropping
+Phases 4-9 with no error surfaced — added a truncation self-check to `global_constraints` so
+the agent flags a likely-truncated prompt instead of proceeding on a partial instruction set.
+Also closed content gaps the audit found even within Phases 1-3: Phase 3 now requires showing
+the runtime-estimate formula (battery mAh ÷ average mA draw) and the resistor-math formula
+explicitly, not just resulting values; Phase 4's sourcing rules now require opening a specific
+product page before falling back to an estimated price; Phase 5's format block now restates
+that the BOM skeleton is per-component, not per whole build; added Wemos/Lolin to the
+ESP32/ESP8266 alt-brands list. Phase 3's power budget deliverable upgraded from a one-line
+sanity check to an explicit per-component power budget table (mirroring the Phase 5 BOM table
+skeleton), with the power source's capacity and the runtime-estimate formula shown below it;
+Phase 7's final-package order now names the power budget table explicitly as a required part
+of the Circuit Design section. Two other gaps the audit found (missing "what to check if this
+doesn't work" list, "Assembly order" instead of a Testing Checklist) were left unchanged,
+since both are more likely artifacts of the same truncation than unclear instruction wording —
+flagged in the lessons log for re-verification on a session with the full prompt confirmed
+loaded. **Not yet live-tested** — recommend a live-test pass before relying on this version.
+
 ## v1.6 — 2026-08-09
 Multi-platform expansion: agent now covers Arduino, ESP32/ESP8266, RP2040 (Pico), STM32, and
 Raspberry Pi (Linux SBC). Renamed to "Idea-to-Embedded-Build Agent." Merged the brand
